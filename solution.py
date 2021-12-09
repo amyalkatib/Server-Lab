@@ -36,8 +36,8 @@ serverSocket.listen(1)
 
 while True:
 
-    print
-    'Ready to serve...'
+    #print
+   # 'Ready to serve...'
 
     # Set up a new connection from the client
 
@@ -57,8 +57,8 @@ while True:
 
         message = connectionSocket.recv(1024)
 
-        print
-        'Message is: ', message
+        #print
+       # 'Message is: ', message
 
         # Extract the path of the requested object from the message
 
@@ -66,8 +66,8 @@ while True:
 
         filename = message.split()[1]
 
-        print
-        'File name is: ', filename
+       # print
+       # 'File name is: ', filename
 
         # Because the extracted path of the HTTP request includes
 
