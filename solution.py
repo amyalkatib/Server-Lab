@@ -16,7 +16,7 @@ serverSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # Alternative 
 
 # Assign a port number
 
-serverPort = 6788
+serverPort = 13331
 
 # Bind the socket to server address and server port
 
