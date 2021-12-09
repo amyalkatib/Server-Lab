@@ -2,6 +2,7 @@
 from socket import *
 # In order to terminate the program
 import sys
+import unicodedata
 
 
 
@@ -20,13 +21,15 @@ def webServer(port=13331):
         try:
 
             try:
-                message =  connectionSocket.recv(1024).decode()# Fill in start    #Fill in end
+                message =  connectionSocket.recv(1024).decode("utf-16")# Fill in start    #Fill in end
                 filename = message.split()[1]
+                #with open(path, encoding="utf8", errors='ignore') as f:
                 f = open(filename[1:])
+                
                 outputdata = f.read()# Fill in start     #Fill in end
 
                 # Send one HTTP header line into socket.
-                connectionSocket.send("HTTP/1.1 200 OK\r\n\r\n")
+                connectionSocket.send("HTTP/1.1 200 OK\r\n\r\n".encode())
 
                 # Fill in start
 
@@ -41,9 +44,9 @@ def webServer(port=13331):
             except IOError:
         # Send response message for file not found (404)
         # Fill in start
-                connectionSocket.send("HTTP/1.1 404 Not Found\r\n\r\n")
+                connectionSocket.send("HTTP/1.1 404 Not Found\r\n\r\n".encode())
 
-                connectionSocket.send("<html><head></head><body><h1>404 Not Found</h1></body></html>\r\n")
+                connectionSocket.send("<html><head></head><body><h1>404 Not Found</h1></body></html>\r\n".encode())
         # Fill in end
 
         # Close client socket
