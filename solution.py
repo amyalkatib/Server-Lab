@@ -38,7 +38,7 @@ def webServer(port=13331):
             connectionSocket.send("HTTP/1.1 404 not found\r\n\r\n".encode())
 
             connectionSocket.send("<html><head></head><body><h1>404 not found</h1></body></html>\r\n".encode())
-        #    connectionSocket.send("HTTP/1.1 404not found\r\n\r\n".encode())
+        #    connectionSocket.send("HTTP/1.1 404 not found\r\n\r\n".encode())
 
            # connectionSocket.send("<html><head></head><body><h1>404 not found</h1></body></html>\r\n".encode())
                 
