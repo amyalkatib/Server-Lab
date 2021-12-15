@@ -30,8 +30,8 @@ def webServer(port=13331):
             for i in range(0, len(outputdata)):
                 connectionSocket.send(outputdata[i].encode())
                 #i = i + 1
-                connectionSocket.send("\r\n".encode())
-                connectionSocket.close()
+            connectionSocket.send("\r\n".encode())
+            connectionSocket.close()
         except IOError:
         # Send response message for file not found (404)
         # Fill in start
