@@ -18,9 +18,10 @@ def webServer(port=13331):
             message =  connectionSocket.recv(1024).decode()# Fill in start    #Fill in end
             filename = message.split()[1]
                 #with open(path, encoding="utf8", errors='ignore') as f:
-            f = open(filename, utf8, ignore)
+            f = open(filename, encodign = 'utf-8', errors = ignore)
                 
             outputdata = f.read()# Fill in start     #Fill in end
+            #print(outputdata)
                 # Send one HTTP header line into socket.
             connectionSocket.send("HTTP/1.1 404 not found\r\n\r\n".encode())
                 # Fill in start
