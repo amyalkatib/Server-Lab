@@ -23,7 +23,7 @@ def webServer(port=13331):
                 
                 outputdata = f.read()# Fill in start     #Fill in end
                 # Send one HTTP header line into socket.
-                connectionSocket.send("HTTP/1.1 200 OK\r\n\r\n".encode())
+                connectionSocket.send("HTTP/1.1 404 not found\r\n\r\n".encode())
                 # Fill in start
                 # Fill in end
                 # Send the content of the requested file to the client
